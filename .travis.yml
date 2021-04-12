@@ -4,13 +4,13 @@ services:
 - docker
 
 script:
-- docker image build -t williamcowherd/dockertest1 .
+- docker image build -t williamcowherd/assignment2 .
 
 after_success:
   #log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to DOcker hub
-  - docker push williamcowherd/dockertest1
+  - docker push williamcowherd/assignment2
   #test
 
 # deploy:
